@@ -1,0 +1,10 @@
+﻿  ODE.cpp
+C:\Users\robot\Downloads\RobotExp4_thur\ode-0.13\include\ode\threading.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  RobotExp_4Dlg.cpp
+C:\Users\robot\Downloads\RobotExp4_thur\RobotExp_4\RobotExp_4Dlg.h(6,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+C:\Users\robot\Downloads\RobotExp4_thur\RobotExp_4\RobotExp_4Dlg.h(7,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+C:\Users\robot\Downloads\RobotExp4_thur\RobotExp_4\RobotExp_4Dlg.h(8,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+C:\Users\robot\Downloads\RobotExp4_thur\RobotExp_4\RobotExp_4Dlg.cpp(259,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\robot\Downloads\RobotExp4_thur\RobotExp_4\RobotExp_4Dlg.cpp(438,9): warning C4101: 'r' :참조되지 않은 지역 변수입니다.
+  코드를 생성하고 있습니다...
+  RobotExp_4.vcxproj -> C:\Users\robot\Downloads\RobotExp4_thur\Debug\RobotExp_4.exe
