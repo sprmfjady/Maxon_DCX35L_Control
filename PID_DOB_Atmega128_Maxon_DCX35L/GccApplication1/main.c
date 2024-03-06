@@ -79,6 +79,7 @@ volatile double Ki_c = 2211.7;
   volatile double u_filtered_pre_DOB = 0;
   volatile double d_DOB = 0;                              // predicted disturbance    d = w-u
   volatile double Ktg = Kt*Kg;
+  volatile double g_vel_control_pre=0;
 
 
 
@@ -214,23 +215,23 @@ ISR(TIMER0_OVF_vect){
 
 
 
-	   //////////////////////////////////////////////////////
-       ///////////////////////DOB////////////////////////////
-       y_cur_DOB = g_Vcur;
-       u_cur_DOB = g_vel_control;
+	    //////////////////////////////////////////////////////
+        ///////////////////////DOB////////////////////////////
+        y_cur_DOB = g_Vcur;
+        u_cur_DOB = g_vel_control_pre;
         
-       w_cur_DOB = (J_eq*(y_cur_DOB-y_pre_DOB)+tau*Ktg*w_pre_DOB+b_eq*y_pre_DOB)/(tau*Ktg+dt_vel*Ktg); 
-       u_filtered_cur_DOB = (dt_vel*u_cur_DOB+tau*u_filtered_pre_DOB)/(tau+dt_vel);  
+        w_cur_DOB = (J_eq*(y_cur_DOB-y_pre_DOB)+tau*Ktg*w_pre_DOB+b_eq*y_pre_DOB)/(tau*Ktg+dt_vel*Ktg); 
+        u_filtered_cur_DOB = (dt_vel*u_cur_DOB+tau*u_filtered_pre_DOB)/(tau+dt_vel);  
        
-       d_DOB = w_cur_DOB - u_filtered_cur_DOB;
+        d_DOB = w_cur_DOB - u_filtered_cur_DOB;
        
-       w_pre_DOB = w_cur_DOB;
-       y_pre_DOB = y_cur_DOB;
-       u_filtered_pre_DOB = u_filtered_cur_DOB;
+        w_pre_DOB = w_cur_DOB;
+        y_pre_DOB = y_cur_DOB;
+        u_filtered_pre_DOB = u_filtered_cur_DOB;
         
-       g_vel_control -= d_DOB;
+        g_vel_control -= d_DOB;
 
-
+	    g_vel_control_pre = g_vel_control;
 
 		
 		// 최대 허용 전류 값에 대한 saturation & anti-windup
